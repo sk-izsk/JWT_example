@@ -1,0 +1,12 @@
+{
+  "name": "JWT",
+  "version": "1.0.0",
+  "description": "JWT",
+  "main": "index.js",
+  "author": "iZsk",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
