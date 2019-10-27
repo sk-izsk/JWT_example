@@ -44,18 +44,24 @@ app.post("/api/posts", verifyToken, (req, res) => {
 });
 
 app.post("/api/login", (_, res) => {
-  // Mock user
+  // Mock Payload
   const user = {
     id: 2,
     username: "iZsk",
     email: "izsk@outlook.com"
   };
 
-  jwt.sign({ user }, "secretkey", { expiresIn: "30s" }, (err, token) => {
-    res.json({
-      token
-    });
-  });
+  jwt.sign(
+    { user },
+    "secretkey",
+    // { algorithm: "RS256" },
+    { expiresIn: "30s" },
+    (_, token) => {
+      res.json({
+        token
+      });
+    }
+  );
 });
 
 app.listen(8000, () => console.log("Server started on port 8000"));
